@@ -1,0 +1,172 @@
+/* Reseta margens e paddings para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #202020;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 2.0rem; /* Tamanho maior para o nome "The MusicDay" */
+    padding-left: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Seção Principal - Descrição do Evento */
+#descricao {
+    height: 80vh; /* Altura reduzida do banner */
+    padding: 100px 10px; /* Ajustando o padding para as laterais */
+    text-align: center;
+    position: relative;
+    color: white; /* Garante que o texto dentro da seção será branco */
+    background-image: url('oi.jpg'); /* Caminho da imagem oi.jpg */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Sobreposição escura para o fundo */
+#descricao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Fundo escuro mas não totalmente opaco */
+    z-index: 1; /* Garante que a sobreposição fique atrás do conteúdo */
+}
+
+/* Container do texto */
+.descricao-container {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique acima da sobreposição */
+    max-width: 800px; /* Limita a largura para centralizar e tornar a descrição mais compacta */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Estilos do título */
+#descricao h2 {
+    font-size: 3rem; /* Tamanho maior do título */
+    margin-bottom: 20px;
+}
+
+/* Estilos dos parágrafos */
+#descricao p {
+    font-size: 1.1rem; /* Tamanho padrão para os parágrafos */
+    margin: 10px 0;
+}
+
+/* Aumentando o tamanho da data e local */
+#descricao p strong {
+    font-size: 1.6rem; /* Aumenta o tamanho da data e local */
+}
+
+/* Galeria */
+#galeria {
+    padding: 40px 10px; /* Aumenta o padding superior e inferior */
+    text-align: center; /* Centraliza o conteúdo dentro da seção */
+}
+
+/* Título da Galeria */
+#galeria h2 {
+    font-size: 2.0rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Grid da Galeria */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Define 3 colunas na galeria */
+    gap: 20px; /* Aumenta o espaçamento entre as imagens */
+    max-width: 1200px; /* Limita a largura máxima da galeria */
+    width: 100%; /* Faz a galeria ocupar toda a largura disponível */
+    margin: 0 auto; /* Centraliza o grid */
+}
+
+.galeria-item {
+    text-align: center;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 300px; /* Garante que todas as imagens tenham a mesma altura */
+    object-fit: cover; /* Assegura que a imagem cubra completamente o espaço */
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.galeria-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+/* Rodapé */
+footer {
+    background-color: #181818;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    /* Menu no formato de coluna para telas pequenas */
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas em telas pequenas */
+    }
+}
